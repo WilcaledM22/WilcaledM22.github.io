@@ -2,14 +2,23 @@
 <html>
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic+Guides&display=swap" rel="stylesheet">
     <title>Sample Website</title>
     <style>
-        p {
-            color: salmon;
+        body {
+            font-family: "Playwrite NZ Basic Guides", cursive;
         }
-        article p {
-          color:darkmagenta;
-          background-color: pink;
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            width: 80%;
+            margin: auto;
+            border: 2px solid black;
+            padding: 10px;
         }
     </style>
 </head>
@@ -31,19 +40,22 @@
         </nav>
     </header>
 
-    <article>
-        <h2>Welcome To My Webpage</h2>
-        <time datetime="2026-04-07">April 7th</time>
-        <p>Here's some stuff about me webpage.</p>
-    </article>
+    <section>
 
-    <article>
-        <h2>Other Stuff</h2>
-        <time datetime="2026-04-07">April 7th</time>
-        <p>I'm freestyling it here</p>
-    </article>
-
-    <footer>Made by W.Matos 2026</footer>
+        <article>
+            <h2>Welcome To My Webpage</h2>
+            <time datetime="2026-04-07">April 7th</time>
+            <p>Here's some stuff about me webpage.</p>
+        </article>
+        
+        <article>
+            <h2>Other Stuff</h2>
+            <time datetime="2026-04-07">April 7th</time>
+            <p>I'm freestyling it here</p>
+        </article>
+    </section>
+        
+        <footer>Made by W.Matos 2026</footer>
 </body>
 
 </html>
