@@ -1,61 +1,87 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic+Guides&display=swap" rel="stylesheet">
-    <title>Sample Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Images</title>
     <style>
         body {
-            font-family: "Playwrite NZ Basic Guides", cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #faedcd;
         }
-        h1 {
-            text-align: center;
+        nav ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            padding: 0;
         }
-
-        section {
-            width: 80%;
-            margin: auto;
-            border: 2px solid black;
+        nav ul li {
+            margin: 10px 20px 10px 20px;
+            background-color: #e9edc9;
             padding: 10px;
+            border: 5px ridge ;
+            border-color: #ccd5ae;
+            border-radius: 10px;
+            transition: 0.1s;
+        }
+        nav ul li:hover {
+            background-color: #fefae0;
+            margin: 0px;
+            padding: 20px 30px 20px 30px;
+            transition: 0.1s;
+        }
+        article {
+            background-color: #e9edc9;
+            width: 75%;
+            border-width: 5px;
+            border-style: ridge;
+            border-color: #ccd5ae;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        img {
+            border-width: 5px;
+            border-style: ridge;
+            border-color: #ccd5ae;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+        article ul {
+            padding: 10px;
+            
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Sample Website</h1>
-        <nav>
-            <details>
-                <summary>Navigation Bar</summary>
-                <ul>
-                    <li><a href="index.html">Home Page</a></li>
-                    <li><a href="about.html">About Page</a></li>
-                    <li><a href="GetToSchool7/index.html">Game Page</a></li>
-                    <li><a href="https://media1.tenor.com/m/-bsYDmc6AqkAAAAd/vector-despicable-me.gif"> Vector Page</a>
-                    </li>
-                </ul>
-            </details>
-        </nav>
-    </header>
+    <h1>Page Top Header</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>Article Title</h2>
+        <img src="dwerk-michael-myers.gif" alt="Dwerk Master">
+        <img src="koza.gif" alt="Licks">
+        <img src="oh-yah.gif" alt="OH, YEAH!">
+        <img src="homer-homer-simpson.gif" alt="Dwerking King">
+        <ul><a href="https://media1.tenor.com/m/pGsAIcIQsusAAAAC/running-fast.gif">MERICA!!</a></ul>
+        <ul><a href="https://tenor.com/view/man-runs-fast-gif-23897588">WHY YOU AT THAT B HOUSE?!</a></ul>
+    
+        <p>Some Cray Cray Things</p>
+    </article>
+    <footer>
+        &copy; 2026
+    </footer>
 
-    <section>
-
-        <article>
-            <h2>Welcome To My Webpage</h2>
-            <time datetime="2026-04-07">April 7th</time>
-            <p>Here's some stuff about me webpage.</p>
-        </article>
-        
-        <article>
-            <h2>Other Stuff</h2>
-            <time datetime="2026-04-07">April 7th</time>
-            <p>I'm freestyling it here</p>
-        </article>
-    </section>
-        
-        <footer>Made by W.Matos 2026</footer>
 </body>
 
 </html>
