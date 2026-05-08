@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Toucher</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #f5d6a8, #d2a679);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #5d4037;
+        }
+
+        #cookie {
+            cursor: pointer;
+            transition: transform 0.1s;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+            user-select: none;
+        }
+
+        #cookie:active {
+            transform: scale(0.95);
+        }
+
+        #score {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #8d6e63;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px #5d4037;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: #a1887f;
+        }
+
+        button:active {
+            box-shadow: 0 0px #5d4037;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images n stuff/classic-chocolate-chip-cookies-2-scaled-removebg-preview.png" alt="Cookie" width="400px"
+        id="cookie" onclick="cookieToucher()">
+    <div id="score">0</div>
+    <button id="autoButton" onclick="autoTouchUprgade()">Upgrade Auto-Touch (100 clicks)</button>
+    <button id="autoButton2" onclick="clickMultiplierUpgrade()">Upgrade Touch Multiplier (100 clicks) </button>
+
+    <script>
+        //configuration 
+
+        //Autoclick 
+        var autoclickAmount = 0;
+        var autoclickCostPerLevel = 100;
+        var autoclickCost = 100;
+
+        //clickMultiplier 
+        var clickMultiplier = 1;
+        var clickMultiplierCostPerLevel = 100;
+        var clickMultiplierCost = 100;
+
+        var score = 0;
+        var scoreBox = document.getElementById("score");
+        var autoButton = document.getElementById("autoButton");
+        var autoButton2 = document.getElementById("autoButton2"); // Added this line
+
+        function cookieToucher() {
+            score = score + (1 * clickMultiplier);
+            scoreBox.innerHTML = score;
+            saveGame();
+        }
+
+        function autoTouchUprgade() {
+            if (score >= autoclickCost) {
+                score = score - autoclickCost;
+                autoclickAmount = autoclickAmount + 100;
+                autoclickCost = autoclickCost * 2;
+                autoButton.innerHTML = "Upgrade Auto-Touch (" + autoclickCost + " clicks)";
+                scoreBox.innerHTML = score;
+                saveGame();
+            }
+        }
+
+        function clickMultiplierUpgrade() {
+            if (score >= clickMultiplierCost) {
+                score = score - clickMultiplierCost;
+                clickMultiplier = clickMultiplier + 250;
+                clickMultiplierCost = clickMultiplierCost * 2;
+                autoButton2.innerHTML = "Upgrade Touch Multiplier (" + clickMultiplierCost + " clicks)";
+                scoreBox.innerHTML = score;
+                saveGame();
+            }
+        }
+
+        function autoClick() {
+            score = score + (1 * autoclickAmount);
+            scoreBox.innerHTML = score;
+            saveGame();
+        }
+
+        function saveGame() {
+            var saveData = {
+
+                autoclickAmount: autoclickAmount,
+                autoclickCostPerLevel: autoclickCostPerLevel,
+                autoclickCost: autoclickCost,
+                clickMultiplier: clickMultiplier,
+                clickMultiplierCostPerLevel: clickMultiplierCostPerLevel,
+                clickMultiplierCost: clickMultiplierCost,
+                score: score
+            }
+
+            var saveText = JSON.stringify(saveData);
+            console.log(saveText)
+            document.cookie = saveText;
+        }
+
+        function loadGame() {
+            var cookieText = document.cookie;
+            cookieText = JSON.parse(cookieText);
+
+            autoclickAmount = cookieText.autoclickAmount;
+            autoclickCostPerLevel = cookieText.autoclickCostPerLevel;
+            autoclickCost = cookieText.autoclickCost;
+            clickMultiplier = cookieText.clickMultiplier;
+            clickMultiplierCostPerLevel = cookieText.clickMultiplierCostPerLevel;
+            clickMultiplierCost = cookieText.clickMultiplierCost;
+            score = cookieText.score;
+            autoButton.innerHTML = "Upgrade Auto-Touch (" + autoclickCost + " clicks)";
+                scoreBox.innerHTML = score;
+        }
+
+        setInterval(autoClick, 250);
+
+        loadGame();
+
+    </script>
+</body>
+
+</html>
