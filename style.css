@@ -1,51 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #e5e7eb;
     color: #1f2937;
 }
 
 
-.main-header {
+header {
     background-color: #111111;
-    color: #facc15;
+    color: white;
     text-align: center;
     padding: 40px;
 }
 
 
-.main-header h1 {
-    font-size: 48px;
-}
-
-
-.navbar {
+nav {
     text-align: center;
     background-color: #374151;
     padding: 15px;
 }
 
 
-.navbar a {
-    text-decoration: none;
+nav a {
+
     color: #f3f4f6;
     font-weight: bold;
     padding: 10px 15px;
 }
 
 
-.navbar a:hover {
-    background-color: #facc15;
+nav a:hover {
+    background-color: white;
     color: #111111;
 }
 
 
-.navbar .active {
-    background-color: #facc15;
-    color: #111111;
-}
-
-
-.content {
+.div {
     width: 80%;
     margin: 30px auto;
     background-color: white;
@@ -53,35 +42,9 @@ body {
 }
 
 
-.content h2 {
-    color: #111111;
-}
-
-
-.content h3 {
-    color: #d97706;
-}
-
-
-.highlight-box {
-    background-color: #fef3c7;
-    border-left: 5px solid #facc15;
-    padding: 20px;
-}
-
-
-.content a {
-    color: #d97706;
-    font-weight: bold;
-}
-
-
 .footer {
     text-align: center;
     padding: 20px;
     background-color: #111111;
-    color: #facc15;
+    color: white;
 }
-
-
-
