@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Toucher</title>
+    <title>Homer Toucher</title>
     <style>
         body {
-            background: radial-gradient(circle, #f5d6a8, #d2a679);
+            background: radial-gradient(circle, #ade8f4, #0077b6);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,13 +15,13 @@
             height: 100vh;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #5d4037;
+            color: #ffc600;
         }
 
         #cookie {
             cursor: pointer;
             transition: transform 0.1s;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 10px 15px #ffc600);
             user-select: none;
         }
 
@@ -33,36 +33,61 @@
             font-size: 4rem;
             font-weight: bold;
             margin: 20px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px grey;
         }
 
         button {
-            background-color: #8d6e63;
-            color: white;
+            background-color: #219ebc;
+            color: #ffc600;
             border: none;
             padding: 15px 30px;
             margin: 10px;
             border-radius: 50px;
             font-size: 1rem;
             cursor: pointer;
-            box-shadow: 0 4px #5d4037;
+            box-shadow: 0 4px #8ecae6;
             transition: all 0.2s;
         }
 
         button:hover {
-            background-color: #a1887f;
+            background-color: #8ecae6;
+            color: #ffc600;
         }
 
         button:active {
-            box-shadow: 0 0px #5d4037;
+            box-shadow: 0 0px #8ecae6;
             transform: translateY(4px);
         }
+
+        nav {
+            text-align: center;
+            background-color: #374151;
+            padding: 15px;
+        }
+
+
+        nav a {
+
+            color: whitesmoke;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+
+        nav a:hover {
+            background-color: #42a5f5;
+            color: #111111;
+        }
     </style>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="GetToSchool7/">My Game</a>
+    </nav>
 </head>
 
 <body>
-    <img src="images n stuff/classic-chocolate-chip-cookies-2-scaled-removebg-preview.png" alt="Cookie" width="400px"
-        id="cookie" onclick="cookieToucher()">
+    <img src="images n stuff/homer-homer-simpson.gif" alt="Vector" width="400px" id="cookie" onclick="cookieToucher()">
     <div id="score">0</div>
     <button id="autoButton" onclick="autoTouchUprgade()">Upgrade Auto-Touch (100 clicks)</button>
     <button id="autoButton2" onclick="clickMultiplierUpgrade()">Upgrade Touch Multiplier (100 clicks) </button>
@@ -148,7 +173,7 @@
             clickMultiplierCost = cookieText.clickMultiplierCost;
             score = cookieText.score;
             autoButton.innerHTML = "Upgrade Auto-Touch (" + autoclickCost + " clicks)";
-                scoreBox.innerHTML = score;
+            scoreBox.innerHTML = score;
         }
 
         setInterval(autoClick, 250);
