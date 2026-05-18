@@ -123,7 +123,7 @@
             if (score >= autoclickCost) {
                 score = score - autoclickCost;
                 autoclickAmount = autoclickAmount + 100;
-                autoclickCost = autoclickCost + 150;
+                autoclickCost = autoclickCost * 2;
                 autoButton.innerHTML = "Upgrade Auto-Touch (" + autoclickCost + " clicks)";
                 scoreBox.innerHTML = score;
                 saveGame();
@@ -134,7 +134,7 @@
             if (score >= clickMultiplierCost) {
                 score = score - clickMultiplierCost;
                 clickMultiplier = clickMultiplier + 250;
-                clickMultiplierCost = clickMultiplierCost + 150;
+                clickMultiplierCost = clickMultiplierCost * 2;
                 autoButton2.innerHTML = "Upgrade Touch Multiplier (" + clickMultiplierCost + " clicks)";
                 scoreBox.innerHTML = score;
                 saveGame();
@@ -179,7 +179,7 @@
             scoreBox.innerHTML = score;
         }
 
-        setInterval(autoClick, 250);
+        setInterval(autoClick, 1);
 
         loadGame();
 
